@@ -8,10 +8,10 @@
 KERNEL_DIR=$PWD
 KERN_IMG=$KERNEL_DIR/out/arch/arm64/boot/Image.gz-dtb
 ZIP_DIR=/home/dhinesh/kernel/anykernel
-CONFIG=dxt_defconfig
+CONFIG=lineageos_payton_defconfig
 CROSS_COMPILE="aarch64-linux-android-"
 CROSS_COMPILE_ARM32="arm-linux-androideabi-"
-PATH="/home/dhinesh/kernel/cl11/bin:/home/dhinesh/kernel/aarch64-linux-android-4.9/bin:/home/dhinesh/kernel/arm-linux-androideabi-4.9/bin:${PATH}"
+PATH="/home/dhinesh/kernel/cl10/bin:/home/dhinesh/kernel/aarch64-linux-android-4.9/bin:/home/dhinesh/kernel/arm-linux-androideabi-4.9/bin:${PATH}"
 
 # Export
 export ARCH=arm64
