@@ -6,6 +6,8 @@
 
 ###################### ONLY FOR DxT ####################
 
+username=dhinesh
+
 # Main environtment
 KERNEL_DIR=$PWD
 KERN_IMG=$KERNEL_DIR/out/arch/arm64/boot/Image.gz-dtb
