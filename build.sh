@@ -8,6 +8,14 @@
 
 username=dhinesh
 
+# Its Clean Time
+if [ "$make_clean" = "yes" ];
+then
+rm -rf out
+wait
+echo -e ${cya}"OUT dir from your repo deleted"${txtrst};
+fi
+
 # Main environtment
 KERNEL_DIR=$PWD
 KERN_IMG=$KERNEL_DIR/out/arch/arm64/boot/Image.gz-dtb
