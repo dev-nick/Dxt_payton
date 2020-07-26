@@ -15,7 +15,7 @@ ZIP_DIR=$KERNEL_DIR/../anykernel
 CONFIG=dxt_defconfig
 CROSS_COMPILE="aarch64-linux-gnu-"
 CROSS_COMPILE_ARM32="arm-linux-gnueabi-"
-PATH="${KERNEL_DIR}/../clang/bin:${KERNEL_DIR}/../clang/aarch64-linux-gnu/bin:${KERNEL_DIR}/../clang/aarch64-linux-gnu/bin:${PATH}"
+PATH="${KERNEL_DIR}/../clang/bin:${KERNEL_DIR}/../clang/aarch64-linux-gnu/bin:${KERNEL_DIR}/../clang/arm-linux-gnueabi/bin:${PATH}"
 
 # Export
 export ARCH=arm64
@@ -24,7 +24,7 @@ export CROSS_COMPILE_ARM32
 
 # Build start
 make O=out $CONFIG
-make -j$(nproc --all) O=out \
+make -j4 O=out \
                       ARCH=arm64 \
                       CC=clang \
 CROSS_COMPILE=aarch64-linux-gnu-
@@ -40,8 +40,9 @@ cd ..
 cd $ZIP_DIR
 cp $KERN_IMG zImage
 make normal &>/dev/null
-rm -rf DxT-v2.2.zip
-zip -r9 DxT-v2.2.zip * -x .git README.md *placeholder
-echo "Flashable zip generated under $ZIP_DIR."
+rm -rf DxT.zip
+zip -r9 DxT * -x .git README.md *placeholder
+mv DxT.zip $KERNEL_DIR/out
+echo "Flashable zip generated under $KERNEL_DIR/out."
 cd ..
 # Build end
