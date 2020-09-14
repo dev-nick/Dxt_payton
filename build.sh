@@ -4,13 +4,15 @@
 # Copyright (C) 2018 Rama Bndan Prakoso (rama982)
 # Android Kernel Build Script
 
+username=dhinesh
+
 ###################### ONLY FOR DxT ####################
 
 # Main environtment
 KERNEL_DIR=$PWD
 KERN_IMG=$KERNEL_DIR/out/arch/arm64/boot/Image.gz-dtb
 ZIP_DIR=$KERNEL_DIR/../anykernel
-CONFIG=dxt_defconfig
+CONFIG=dxt_eas_defconfig
 CROSS_COMPILE="aarch64-linux-gnu-"
 CROSS_COMPILE_ARM32="arm-linux-gnueabi-"
 PATH="${KERNEL_DIR}/../clang/bin:${KERNEL_DIR}/../clang/aarch64-linux-gnu/bin:${KERNEL_DIR}/../clang/aarch64-linux-gnu/bin:${PATH}"
