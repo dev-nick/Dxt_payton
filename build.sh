@@ -32,7 +32,7 @@ export CROSS_COMPILE_ARM32
 
 # Build start
 make O=out $CONFIG
-make -j4 O=out \
+make -j$(($(nproc --all)*2)) O=out \
                       ARCH=arm64 \
                       CC=clang \
 CROSS_COMPILE=aarch64-linux-gnu-
